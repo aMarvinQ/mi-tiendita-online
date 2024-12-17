@@ -1,5 +1,8 @@
 import express from "express";
-import  { sequelize }  from "./database.js"
+import sequelize from "./app/config/database.js"
+
+// importación de rutas
+import statusRouter from "./app/routes/Status.js";
 
 const app = express();
 const port = 3000;
@@ -9,6 +12,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hola Mundo");
 });
+
+// Rutas
+app.use('/api', statusRouter);
+
+
 
 app.get('/test', async (req, res) => {
   try {

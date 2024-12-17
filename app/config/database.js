@@ -22,4 +22,4 @@ const sequelize = new Sequelize({
   trustServerCertificate: true,
 });
 
-export { sequelize };
+export default sequelize;
