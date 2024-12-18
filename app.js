@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
 app.use('/api', statusRouter);
 
 
-
 app.get('/test', async (req, res) => {
   try {
     await sequelize.authenticate();
