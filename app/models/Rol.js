@@ -1,9 +1,8 @@
 import { DataTypes } from '@sequelize/core';
-import sequelize from '../config/database.js';
+import sequelize from "../config/database";
 
-// mapeo de la tabla estados
-const statusModel = sequelize.define('Estado', {
-    idEstados: {
+const rolModel = sequelize.define('Rol', {
+    idRol: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -14,9 +13,8 @@ const statusModel = sequelize.define('Estado', {
         allowNull: false
     }
 }, {
-    tableName: 'Estados',
+    tableName: 'Rol',
     timestamps: false
-})
+});
 
-// exportación del modelo status hacía el controlador 
-export default statusModel;
+export default rolModel;

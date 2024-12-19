@@ -1,4 +1,4 @@
-// modulos
+    // modulos
 import express from 'express';
 import statusController from "../controllers/Status.js"; 
 
@@ -12,4 +12,4 @@ router.get('/status/:id', statusController.getOneStatus);
 router.put('/updateStatus/:id', statusController.updateStatus);
 router.delete('/deleteStatus/:id', statusController.deleteStatus);
 
-export default router;
+export default router;  

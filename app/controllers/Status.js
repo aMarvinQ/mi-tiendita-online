@@ -1,5 +1,5 @@
 import sequelize from '../config/database.js';
-import statusModel from '../models/Status.js';
+import statusModel from '../models/Status.js'; //modelo necesario para el controlador "statusModel"
 
 class StatusController {
 
@@ -9,7 +9,7 @@ class StatusController {
             const { name } = req.body;
             await sequelize.query('EXEC p_insert_estados @nombre=:name',
                 { replacements: { name }});
-            return res.status(201).send(`Usuario creado exitosamente`);
+            return res.status(201).send(`Estado creado exitosamente`);
         } catch ( err ) {
             res.status(500).send(`Error al crear un nuevo estado: ${err.message}`)
         }
@@ -68,5 +68,6 @@ class StatusController {
 
 }
 
+// exportación del controlador hacía las rutas
 const statusController = new StatusController();
 export default statusController;
