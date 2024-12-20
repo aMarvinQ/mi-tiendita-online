@@ -118,6 +118,6 @@ class ProductController {
     }
 }
 
-
+// exportación del objeto instanciado hacía rutas
 const productController = new ProductController;
 export default productController;

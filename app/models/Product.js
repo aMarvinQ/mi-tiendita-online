@@ -1,6 +1,11 @@
 import { DataTypes } from '@sequelize/core';
 import sequelize from '../config/database.js';
+// importación de modelos relacionados
+import catProductModel from './CatProduct.js';
+import userModel from './User.js';
+import statusModel from './Status.js';
 
+// mapeo de tabla 
 const productModel = sequelize.define('Productos', {
     idProductos: {
         type: DataTypes.INTEGER,
@@ -11,14 +16,16 @@ const productModel = sequelize.define('Productos', {
     categoriaProductos_idCategoriaProductos: {
         type: DataTypes.INTEGER,
         references: {
-            // foreign key
+            model: catProductModel,
+            key: 'idCategoriaProductos'
         },
         allowNull: false
     },
     usuarios_idUsuarios: {
         type: DataTypes.INTEGER,
         references: {
-            // foreign key
+            model: userModel,
+            key: 'idUsuarios'
         },
         allowNull: false
     },
@@ -41,7 +48,8 @@ const productModel = sequelize.define('Productos', {
     estados_idEstados: {
         type: DataTypes.INTEGER,
         references: {
-            // foreign key
+            model: statusModel,
+            key: 'idEstados'
         },
         allowNull: false
     },
@@ -62,4 +70,10 @@ const productModel = sequelize.define('Productos', {
     timestamps: false
 });
 
+// relaciones de tablas
+catProductModel.hasMany(productModel, {foreignKey: 'categoriaProductos_idCategoriaProductos'});
+userModel.hasMany(productModel, {foreignKey: 'usuarios_idUsuarios'});
+productModel.belongsTo(statusModel, {foreignKey: 'estados_idEstados'});
+
+// exportación de modelo hacía su controlador
 export default productModel;

@@ -1,6 +1,7 @@
 import { DataTypes } from '@sequelize/core';
 import sequelize from "../config/database";
 
+// mapeo de tabla
 const rolModel = sequelize.define('Rol', {
     idRol: {
         type: DataTypes.INTEGER,
@@ -17,4 +18,5 @@ const rolModel = sequelize.define('Rol', {
     timestamps: false
 });
 
+// exportación de modelo hacía controladores
 export default rolModel;

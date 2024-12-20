@@ -61,7 +61,9 @@ const userModel = sequelize.define('Usuario', {
     timestamps: false
 })
 
+// relaciones
 userModel.belongsTo(statusModel, {foreignKey: 'estados_idEstados'});
 userModel.belongsTo(customerModel, {foreignKey: 'clientes_idClientes'});
 
+// exportación de modelo hacía controladores
 export default userModel;

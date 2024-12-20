@@ -1,13 +1,25 @@
+// modulos requeridos
 import sequelize from "../config/database.js";
 import catProductModel from "../models/CatProduct.js";
 
 class CatProductController {
+  // método para crear una nueva categoría mediante un proceso almacenado
   async createCatProduct(req, res) {
     try {
+      // parametros necesarios que pasará el usuario
         const { idUser, name, idStatus } = req.body;
 
-        await sequelize.query('EXEC p_insert_catProductos @usuarios_idUsuarios=:idUser, @nombre=:name, @estados_idEstados=:idStatus',
-          { replacements: { idUser, name, idStatus }});
+        await sequelize.query(`EXEC p_insert_catProductos 
+            @usuarios_idUsuarios=:idUser, 
+            @nombre=:name, 
+            @estados_idEstados=:idStatus`,
+            
+          { replacements: { 
+              idUser, 
+              name, 
+              idStatus 
+            }});
+
         res.status(201).send('Categoría creada exitosamente');
     } catch ( err ) {
       res.status(500).send(`Error al procesar la solicitud: ${err.message}`);
@@ -36,14 +48,25 @@ class CatProductController {
     }
   }
 
-  // actualizar usuario
+  // actualizar categoría 
   async updateCatProduct (req, res) {
     try {
       const { idUser, name, idStatus } = req.body;
       const { id } = req.params;
         
-      await sequelize.query('EXEC p_update_catProductos @idCategoriaProductos=:id, @usuarios_idUsuarios=:idUser, @nombre=:name, @estados_idEstados=:idStatus', 
-        { replacements: { id, idUser, name, idStatus }});
+      await sequelize.query(`EXEC p_update_catProductos 
+          @idCategoriaProductos=:id, 
+          @usuarios_idUsuarios=:idUser, 
+          @nombre=:name, 
+          @estados_idEstados=:idStatus`, 
+
+        { replacements: { 
+            id, 
+            idUser, 
+            name, 
+            idStatus 
+        }});
+
             res.status(201).send('Categoría actualizado con exito');
     } catch ( err ) {
         res.status(500).send(`Error al procesar la solicitud: ${err.message}`);
@@ -56,8 +79,15 @@ class CatProductController {
       const { idStatus } = req.body;
       const { id } = req.params;
       
-      await sequelize.query('Exec p_delete_catProductos @idCategoriaProductos=:id, @estados_idEstados=:idStatus',
-        { replacements: { id, idStatus }});
+      await sequelize.query(`Exec p_delete_catProductos 
+          @idCategoriaProductos=:id, 
+          @estados_idEstados=:idStatus`,
+
+        { replacements: { 
+            id, 
+            idStatus 
+          }});
+          
         res.status(201).send('Categoria eliminada con exito');
     } catch ( err ) {
       res.status(500).send(`Error al procesar la solicitud: ${err.message}`);

@@ -4,6 +4,7 @@ import sequelize from "../config/database.js";
 import userModel from './User.js';
 import statusModel from './Status.js';
 
+// mapeado de la tabla
 const catProductModel = sequelize.define('CategoriaProductos', {
     idCategoriaProductos: {
         type: DataTypes.INTEGER,
@@ -40,6 +41,9 @@ const catProductModel = sequelize.define('CategoriaProductos', {
     timestamps: false
 });
 
+// relaciones entre tablas
 userModel.hasMany(catProductModel, {foreignKey: 'usuarios_idUsuarios'});
 catProductModel.belongsTo(statusModel, {foreignKey: 'estados_idEstados'});
+
+// exportación del modelo hacía los controladores
 export default catProductModel;

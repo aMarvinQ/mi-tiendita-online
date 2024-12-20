@@ -4,6 +4,7 @@ import sequelize from '../config/database';
 import userModel from './User';
 import statusModel from './Status';
 
+// mapeado de la tabla 
 const ordenModel = sequelize.define('Orden', {
     idOrden : {
         type: DataTypes.INTEGER,

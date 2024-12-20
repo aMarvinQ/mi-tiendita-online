@@ -2,13 +2,31 @@ import sequelize from "../config/database.js";
 import userModel from "../models/User.js";
 
 class UserController {
-    // crear un nuevo usuario
+    // crear un nuevo usuario con procedimiento almacenado
     async createUser (req, res) {
         try {
+            // parametros requeridos del procedimiento almacenado
             const { idRol, idStatus, email, name, password, tel, birthdate, idCustomer } = req.body;
 
-            await sequelize.query('EXEC p_insert_usuarios @rol_idRol=:idRol, @estados_idEstados=:idStatus, @email=:email, @nombre_completo=:name, @password=:password, @telefono=:tel, @fecha_nac=:birthdate, @clientes_idClientes=:idCustomer', 
-                { replacements: { idRol, idStatus, email, name, password, tel, birthdate, idCustomer }});
+            await sequelize.query(`EXEC p_insert_usuarios 
+                @rol_idRol=:idRol, 
+                @estados_idEstados=:idStatus, 
+                @email=:email, 
+                @nombre_completo=:name, 
+                @password=:password, 
+                @telefono=:tel, 
+                @fecha_nac=:birthdate, 
+                @clientes_idClientes=:idCustomer`, 
+                { replacements: { 
+                    idRol, 
+                    idStatus, 
+                    email, 
+                    name, 
+                    password, 
+                    tel, 
+                    birthdate, 
+                    idCustomer }});
+
             res.status(201).send('Usuario creado exitosamente');
         } catch ( err ) {
             res.status(500).send(`Error al crear usuario: ${err.message}`);
@@ -25,7 +43,7 @@ class UserController {
         }
     }
 
-    // ver un usuario
+    // ver un usuario por llave primaria
     async getOneUser (req, res) {
         try {
             const user = await userModel.findByPk(req.params.id);
