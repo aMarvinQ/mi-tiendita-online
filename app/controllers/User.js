@@ -64,5 +64,7 @@ class UserController {
         }
     }
 }
+
+// exportación del objeto instanciado hacía routes
 const userController = new UserController
 export default userController;

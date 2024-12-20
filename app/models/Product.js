@@ -1,5 +1,5 @@
 import { DataTypes } from '@sequelize/core';
-import sequelize from '../config/database';
+import sequelize from '../config/database.js';
 
 const productModel = sequelize.define('Productos', {
     idProductos: {
@@ -50,9 +50,8 @@ const productModel = sequelize.define('Productos', {
         allowNull: true
     },
     fecha_creacion: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        field: 'createdAt'
+        type: DataTypes.STRING,
+        allowNull: false
     },
     foto: {
         type: DataTypes.BLOB,
@@ -60,8 +59,7 @@ const productModel = sequelize.define('Productos', {
     }
 }, {
     tableName: 'Productos',
-    timestamps: true,
-    updatedAt: false
+    timestamps: false
 });
 
 export default productModel;
