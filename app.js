@@ -7,6 +7,7 @@ import customerRouter from "./app/routes/Customer.js";
 import userRouter from './app/routes/User.js';
 import catProductRouter from './app/routes/catProduct.js';
 import productRoutes from './app/routes/Product.js';
+import orderDetailsRoutes from './app/routes/OrderDetails.js';
 
 const app = express();
 const port = 3000;
@@ -24,6 +25,7 @@ app.use('/api', customerRouter);
 app.use('/api', userRouter);
 app.use('/api', catProductRouter);
 app.use('/api', productRoutes);
+app.use('/api', orderDetailsRoutes);
 
 
 app.get('/test', async (req, res) => {

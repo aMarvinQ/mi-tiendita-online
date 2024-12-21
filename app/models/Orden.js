@@ -1,8 +1,8 @@
 import { DataTypes } from '@sequelize/core';
-import sequelize from '../config/database';
+import sequelize from '../config/database.js';
 // importación de modelos relacionados
-import userModel from './User';
-import statusModel from './Status';
+import userModel from './User.js';
+import statusModel from './Status.js';
 
 // mapeado de la tabla 
 const ordenModel = sequelize.define('Orden', {
@@ -29,9 +29,8 @@ const ordenModel = sequelize.define('Orden', {
         allowNull: false
     },
     fecha_creacion: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        field: 'createdAt'
+        type: DataTypes.STRING,
+        allowNull: false
     },
     nombre_completo: {
         type: DataTypes.STRING(60),
@@ -59,8 +58,7 @@ const ordenModel = sequelize.define('Orden', {
     }
 }, {
     tableName: 'Orden',
-    timestamps: true,
-    updatedAt: false
+    timestamps: false
 });
 
 export default ordenModel;

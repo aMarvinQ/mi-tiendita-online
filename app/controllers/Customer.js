@@ -3,7 +3,7 @@ import customerModel from "../models/Customer.js";
 
 class CustomerController {
     // crear cliente con procedimiento almacenado
-    async createCustomer (req, res) {
+    createCustomer = async (req, res) => {
         try {
             const { companyName, tradeName, delAddress, tel, email } = req.body;
             await sequelize.query(`EXEC p_insert_clientes 
@@ -28,7 +28,7 @@ class CustomerController {
     }
 
     // ver todos los clientes
-    async getAllCustomers (req, res) {
+    getAllCustomers = async (req, res) => {
         try {
             const customers = await customerModel.findAll({});
             res.json(customers);
@@ -38,7 +38,7 @@ class CustomerController {
     }
 
     // ver cliente por ID
-    async getOneCustomer (req, res) {
+    getOneCustomer = async (req, res) => {
         try {
             const customer = await customerModel.findByPk(req.params.id);
             if (customer) {
@@ -51,7 +51,7 @@ class CustomerController {
     }
 
     // actualizar cliente con procedimiento almacenado
-    async updateCustomer (req, res) {
+    updateCustomer = async (req, res) => {
         try{
             const { companyName, tradeName, delAddress, tel, email } = req.body;
             const { id } = req.params;

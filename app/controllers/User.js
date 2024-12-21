@@ -3,7 +3,7 @@ import userModel from "../models/User.js";
 
 class UserController {
     // crear un nuevo usuario con procedimiento almacenado
-    async createUser (req, res) {
+    createUser = async (req, res) => {
         try {
             // parametros requeridos del procedimiento almacenado
             const { idRol, idStatus, email, name, password, tel, birthdate, idCustomer } = req.body;
@@ -34,7 +34,7 @@ class UserController {
     }
 
     // ver todos los usuarios
-    async getAllUsers (req, res) {
+    getAllUsers = async (req, res) => {
         try {
             const users = await userModel.findAll({});
             res.json(users);
@@ -44,7 +44,7 @@ class UserController {
     }
 
     // ver un usuario por llave primaria
-    async getOneUser (req, res) {
+    getOneUser = async (req, res) => {
         try {
             const user = await userModel.findByPk(req.params.id);
             if (user) {
@@ -56,7 +56,7 @@ class UserController {
     }
 
     // actualizar usuario
-    async updateUser (req, res) {
+    updateUser = async (req, res) => {
         try {
             const { idRol, idStatus, name, password, tel } = req.body;
             const { id } = req.params;
@@ -69,7 +69,7 @@ class UserController {
     }
 
     // inactivación de usuario con eliminación lógica
-    async deleteUser (req, res) {
+    deleteUser = async (req, res) => {
         try {
             const { idStatus } = req.body;
             const { id } = req.params;

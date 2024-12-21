@@ -4,7 +4,7 @@ import catProductModel from "../models/CatProduct.js";
 
 class CatProductController {
   // método para crear una nueva categoría mediante un proceso almacenado
-  async createCatProduct(req, res) {
+  createCatProduct= async (req, res) => {
     try {
       // parametros necesarios que pasará el usuario
         const { idUser, name, idStatus } = req.body;
@@ -27,7 +27,7 @@ class CatProductController {
   }
 
   // ver todas las categorías
-  async getAllCatProduct(req, res) {
+  getAllCatProduct = async (req, res) => {
     try {
       const catProducts = await catProductModel.findAll({});
       res.json(catProducts);
@@ -37,7 +37,7 @@ class CatProductController {
   }
 
   // ver una categoría
-  async getOneCatProduct (req, res) {
+  getOneCatProduct = async (req, res) => {
     try {
         const catProduct = await catProductModel.findByPk(req.params.id);
         if (catProduct) {
@@ -49,7 +49,7 @@ class CatProductController {
   }
 
   // actualizar categoría 
-  async updateCatProduct (req, res) {
+  updateCatProduct = async (req, res) => {
     try {
       const { idUser, name, idStatus } = req.body;
       const { id } = req.params;
@@ -74,7 +74,7 @@ class CatProductController {
   }
 
   // eliminación lógica de una categoría de productos con procedimientos almacenados 
-  async deleteCatProduct (req, res) {
+  deleteCatProduct = async (req, res) => {
     try {
       const { idStatus } = req.body;
       const { id } = req.params;

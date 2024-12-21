@@ -4,7 +4,7 @@ import statusModel from '../models/Status.js'; //modelo necesario para el contro
 class StatusController {
 
     // crear estado con procedimiento almacenado
-    async createStatus (req, res){
+    createStatus = async (req, res) => {
         try {
             const { name } = req.body;
             await sequelize.query('EXEC p_insert_estados @nombre=:name',
@@ -16,7 +16,7 @@ class StatusController {
     }
 
     // ver todos los estados
-    async getAllStatus (req, res){
+    getAllStatus = async (req, res) => {
         try {
             const status = await statusModel.findAll({});
             res.json(status)
@@ -26,7 +26,7 @@ class StatusController {
     }
 
     // ver estado por id
-    async getOneStatus (req, res) {
+    getOneStatus = async (req, res) => {
         try {
             const status = await statusModel.findByPk(req.params.id);
             if (status) {
@@ -39,7 +39,7 @@ class StatusController {
     }
 
     // actualizar estados con procedimientos almacenados
-    async updateStatus (req, res) {
+    updateStatus = async (req, res) => {
         try {
             const { name } = req.body;
             const { id } = req.params;
@@ -52,7 +52,7 @@ class StatusController {
     }
 
     // eliminar estados
-    async deleteStatus (req, res) {
+    deleteStatus = async (req, res) => {
         try {
             const status = await statusModel.destroy({
                 where: { idEstados: req.params.id }
