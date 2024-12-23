@@ -7,7 +7,17 @@ class UserController {
         try {
             // parametros requeridos del procedimiento almacenado
             const { idRol, idStatus, email, name, password, tel, birthdate, idCustomer } = req.body;
-
+            if( !idRol 
+                || !idStatus 
+                || !email 
+                || !name 
+                || !password 
+                || !tel 
+                || !birthdate 
+                || !idCustomer ) 
+                {
+                return res.send('Debe completar todos los cambos');
+            }
             await sequelize.query(`EXEC p_insert_usuarios 
                 @rol_idRol=:idRol, 
                 @estados_idEstados=:idStatus, 
