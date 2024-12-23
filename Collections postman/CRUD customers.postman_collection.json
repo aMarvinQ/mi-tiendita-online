@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "4f3f092b-b85e-4d64-b007-64f6bdae17f0",
+		"name": "CRUD customers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40347796"
+	},
+	"item": [
+		{
+			"name": "createCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyName\": \"crud company\",\r\n    \"tradeName\": \"nombre cualquiera\",\r\n    \"delAddress\": \"calle cualquiera\",\r\n    \"tel\": \"12345678\",\r\n    \"email\": \"crud@prueba.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/newCustomer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"newCustomer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-createCustomer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"crud company\",\r\n    \"tradeName\": \"nombre cualquiera\",\r\n    \"delAddress\": \"calle cualquiera\",\r\n    \"tel\": \"12345678\",\r\n    \"email\": \"crud@prueba.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/newCustomer",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"newCustomer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-qZHIDkHyCjZhxXpRoZjvy66u/A4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 06:47:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Usuario creado exitosamente"
+				}
+			]
+		},
+		{
+			"name": "getAllCustomers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/allCustomers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allCustomers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getAllCustomers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/allCustomers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"allCustomers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2033"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7f1-Fi0F3LrxXJXMHy3BrpiImMeteZg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 06:53:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idClientes\": 1,\n        \"razon_social\": \"Cliente SA 1\",\n        \"nombre_comercial\": \"Cliente Comercial 1\",\n        \"direccion_entrega\": \"Calle 1\",\n        \"telefono\": \"555-1010\",\n        \"correo_electronico\": \"cliente1@example.com\"\n    },\n    {\n        \"idClientes\": 2,\n        \"razon_social\": \"Cliente SA 2\",\n        \"nombre_comercial\": \"Cliente Comercial 2\",\n        \"direccion_entrega\": \"Calle 2\",\n        \"telefono\": \"555-2020\",\n        \"correo_electronico\": \"cliente2@example.com\"\n    },\n    {\n        \"idClientes\": 3,\n        \"razon_social\": \"Cliente SA 3\",\n        \"nombre_comercial\": \"Cliente Comercial 3\",\n        \"direccion_entrega\": \"Calle 3\",\n        \"telefono\": \"555-3030\",\n        \"correo_electronico\": \"cliente3@example.com\"\n    },\n    {\n        \"idClientes\": 4,\n        \"razon_social\": \"Cliente SA 4\",\n        \"nombre_comercial\": \"Cliente Comercial 4\",\n        \"direccion_entrega\": \"Calle 4\",\n        \"telefono\": \"555-4040\",\n        \"correo_electronico\": \"cliente4@example.com\"\n    },\n    {\n        \"idClientes\": 5,\n        \"razon_social\": \"Cliente SA 5\",\n        \"nombre_comercial\": \"Cliente Comercial 5\",\n        \"direccion_entrega\": \"Calle 5\",\n        \"telefono\": \"555-5050\",\n        \"correo_electronico\": \"cliente5@example.com\"\n    },\n    {\n        \"idClientes\": 6,\n        \"razon_social\": \"Cliente SA 6\",\n        \"nombre_comercial\": \"Cliente Comercial 6\",\n        \"direccion_entrega\": \"Calle 6\",\n        \"telefono\": \"555-6060\",\n        \"correo_electronico\": \"cliente6@example.com\"\n    },\n    {\n        \"idClientes\": 7,\n        \"razon_social\": \"Cliente SA 7\",\n        \"nombre_comercial\": \"Cliente Comercial 7\",\n        \"direccion_entrega\": \"Calle 7\",\n        \"telefono\": \"555-7070\",\n        \"correo_electronico\": \"cliente7@example.com\"\n    },\n    {\n        \"idClientes\": 8,\n        \"razon_social\": \"Cliente SA 8\",\n        \"nombre_comercial\": \"Cliente Comercial 8\",\n        \"direccion_entrega\": \"Calle 8\",\n        \"telefono\": \"555-8080\",\n        \"correo_electronico\": \"cliente8@example.com\"\n    },\n    {\n        \"idClientes\": 9,\n        \"razon_social\": \"Cliente SA 9\",\n        \"nombre_comercial\": \"Cliente Comercial 9\",\n        \"direccion_entrega\": \"Calle 9\",\n        \"telefono\": \"555-9090\",\n        \"correo_electronico\": \"cliente9@example.com\"\n    },\n    {\n        \"idClientes\": 10,\n        \"razon_social\": \"Cliente SA 10\",\n        \"nombre_comercial\": \"Cliente Comercial 10\",\n        \"direccion_entrega\": \"Calle 10\",\n        \"telefono\": \"555-1010\",\n        \"correo_electronico\": \"cliente10@example.com\"\n    },\n    {\n        \"idClientes\": 11,\n        \"razon_social\": \"crud company\",\n        \"nombre_comercial\": \"nombre cualquiera\",\n        \"direccion_entrega\": \"calle cualquiera\",\n        \"telefono\": \"12345678\",\n        \"correo_electronico\": \"crud@prueba.com\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOneCustomer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/customer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getOneCustomer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/customer/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7-IxqyqofWWNmoa0MJDcSeRuCF4Gk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 07:13:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idClientes\": 1,\n    \"razon_social\": \"Cliente SA 1\",\n    \"nombre_comercial\": \"Cliente Comercial 1\",\n    \"direccion_entrega\": \"Calle 1\",\n    \"telefono\": \"555-1010\",\n    \"correo_electronico\": \"cliente1@example.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 12,\r\n    \"companyName\": \"crud company updated\",\r\n    \"tradeName\": \"nombre cualquiera updated\",\r\n    \"delAddress\": \"calle cualquiera updates\",\r\n    \"tel\": \"12345678\",\r\n    \"email\": \"crud@prueba.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api//updateCustomer/11",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"",
+						"updateCustomer",
+						"11"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-updateCustomer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 12,\r\n    \"companyName\": \"crud company updated\",\r\n    \"tradeName\": \"nombre cualquiera updated\",\r\n    \"delAddress\": \"calle cualquiera updates\",\r\n    \"tel\": \"12345678\",\r\n    \"email\": \"crud@prueba.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api//updateCustomer/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"",
+								"updateCustomer",
+								"11"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-1wU6IMnGgH1x/wQiPd7TCbtHYP8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 07:30:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Cliente actualizado con exito"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "2a418428-14e6-4b8f-9944-2dee407b654b",
+		"name": "CRUD users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40347796"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idRol\": 2,\r\n    \"idStatus\": 2,\r\n    \"email\": \"correo@cualquiera.com\",\r\n    \"name\": \"user test\",\r\n    \"password\": \"123456789\",\r\n    \"tel\": \"12345678\",\r\n    \"birthdate\": \"2000-05-12\",\r\n    \"idCustomer\": 11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/newUser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"newUser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-createUser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idRol\": 2,\r\n    \"idStatus\": 2,\r\n    \"email\": \"correo@cualquiera.com\",\r\n    \"name\": \"user test\",\r\n    \"password\": \"123456789\",\r\n    \"tel\": \"12345678\",\r\n    \"birthdate\": \"2000-05-12\",\r\n    \"idCustomer\": 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/newUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"newUser"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-qZHIDkHyCjZhxXpRoZjvy66u/A4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Dec 2024 17:06:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Usuario creado exitosamente"
+				}
+			]
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/allUsers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allUsers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getAllUsers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/allUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"allUsers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3673"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e59-ZLpiNYWisMQkZvNMGMx40b5eo9Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Dec 2024 17:06:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idUsuarios\": 1,\n        \"rol_idRol\": 1,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario1@example.com\",\n        \"nombre_completo\": \"Usuario Uno\",\n        \"password\": \"password1\",\n        \"telefono\": \"555-1001\",\n        \"fecha_nac\": \"1991-07-18T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-01-30T00:00:00.000Z\",\n        \"clientes_idClientes\": 1\n    },\n    {\n        \"idUsuarios\": 2,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 2,\n        \"correo_electronico\": \"usuario2@example.com\",\n        \"nombre_completo\": \"Usuario Dos\",\n        \"password\": \"password2\",\n        \"telefono\": \"555-1002\",\n        \"fecha_nac\": \"1997-02-22T00:00:00.000Z\",\n        \"fecha_creacion\": \"2023-12-08T00:00:00.000Z\",\n        \"clientes_idClientes\": 2\n    },\n    {\n        \"idUsuarios\": 3,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario3@example.com\",\n        \"nombre_completo\": \"Usuario Tres\",\n        \"password\": \"password3\",\n        \"telefono\": \"555-1003\",\n        \"fecha_nac\": \"1989-11-09T00:00:00.000Z\",\n        \"fecha_creacion\": \"2023-11-11T00:00:00.000Z\",\n        \"clientes_idClientes\": 3\n    },\n    {\n        \"idUsuarios\": 4,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario4@example.com\",\n        \"nombre_completo\": \"Usuario Cuatro\",\n        \"password\": \"password4\",\n        \"telefono\": \"555-1004\",\n        \"fecha_nac\": \"1989-11-09T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-12-06T00:00:00.000Z\",\n        \"clientes_idClientes\": 4\n    },\n    {\n        \"idUsuarios\": 5,\n        \"rol_idRol\": 1,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario5@example.com\",\n        \"nombre_completo\": \"Usuario Cinco\",\n        \"password\": \"password5\",\n        \"telefono\": \"555-1005\",\n        \"fecha_nac\": \"1993-04-11T00:00:00.000Z\",\n        \"fecha_creacion\": \"2023-12-09T00:00:00.000Z\",\n        \"clientes_idClientes\": 5\n    },\n    {\n        \"idUsuarios\": 6,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 2,\n        \"correo_electronico\": \"usuario6@example.com\",\n        \"nombre_completo\": \"Usuario Seis\",\n        \"password\": \"password6\",\n        \"telefono\": \"555-1006\",\n        \"fecha_nac\": \"1990-06-01T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-08-16T00:00:00.000Z\",\n        \"clientes_idClientes\": 6\n    },\n    {\n        \"idUsuarios\": 7,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario7@example.com\",\n        \"nombre_completo\": \"Usuario Siete\",\n        \"password\": \"password7\",\n        \"telefono\": \"555-1007\",\n        \"fecha_nac\": \"1993-04-11T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-06-26T00:00:00.000Z\",\n        \"clientes_idClientes\": 7\n    },\n    {\n        \"idUsuarios\": 8,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario8@example.com\",\n        \"nombre_completo\": \"Usuario Ocho\",\n        \"password\": \"password8\",\n        \"telefono\": \"555-1008\",\n        \"fecha_nac\": \"1990-08-01T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-06-16T00:00:00.000Z\",\n        \"clientes_idClientes\": 8\n    },\n    {\n        \"idUsuarios\": 9,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario9@example.com\",\n        \"nombre_completo\": \"Usuario Nueve\",\n        \"password\": \"password9\",\n        \"telefono\": \"555-1009\",\n        \"fecha_nac\": \"1993-04-11T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-07-06T00:00:00.000Z\",\n        \"clientes_idClientes\": 9\n    },\n    {\n        \"idUsuarios\": 10,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 1,\n        \"correo_electronico\": \"usuario10@example.com\",\n        \"nombre_completo\": \"Usuario Diez\",\n        \"password\": \"password10\",\n        \"telefono\": \"555-1010\",\n        \"fecha_nac\": \"1993-04-11T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-05-10T00:00:00.000Z\",\n        \"clientes_idClientes\": 9\n    },\n    {\n        \"idUsuarios\": 11,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 2,\n        \"correo_electronico\": \"correo@cualquiera.com\",\n        \"nombre_completo\": \"user test\",\n        \"password\": \"123456789\",\n        \"telefono\": \"12345678\",\n        \"fecha_nac\": \"2000-05-12T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-12-19T11:01:39.450Z\",\n        \"clientes_idClientes\": 11\n    },\n    {\n        \"idUsuarios\": 12,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 2,\n        \"correo_electronico\": \"correo@cualquiera.com\",\n        \"nombre_completo\": \"user test\",\n        \"password\": \"123456789\",\n        \"telefono\": \"12345678\",\n        \"fecha_nac\": \"2000-05-12T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-12-19T11:05:08.777Z\",\n        \"clientes_idClientes\": 11\n    },\n    {\n        \"idUsuarios\": 13,\n        \"rol_idRol\": 2,\n        \"estados_idEstados\": 2,\n        \"correo_electronico\": \"correo@cualquiera.com\",\n        \"nombre_completo\": \"user test\",\n        \"password\": \"123456789\",\n        \"telefono\": \"12345678\",\n        \"fecha_nac\": \"2000-05-12T00:00:00.000Z\",\n        \"fecha_creacion\": \"2024-12-19T11:06:07.347Z\",\n        \"clientes_idClientes\": 11\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOndeUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/user/13",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"13"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getOndeUser",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/13",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"13"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "281"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"119-DjGglTaINvgWZUQPTNDcf6NNtjo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Dec 2024 17:13:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idUsuarios\": 13,\n    \"rol_idRol\": 2,\n    \"estados_idEstados\": 2,\n    \"correo_electronico\": \"correo@cualquiera.com\",\n    \"nombre_completo\": \"user test\",\n    \"password\": \"123456789\",\n    \"telefono\": \"12345678\",\n    \"fecha_nac\": \"2000-05-12T00:00:00.000Z\",\n    \"fecha_creacion\": \"2024-12-19T11:06:07.347Z\",\n    \"clientes_idClientes\": 11\n}"
+				}
+			]
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idRol\": 3,\r\n    \"idStatus\": null,\r\n    \"name\": \"update\",\r\n    \"password\": \"123abc\",\r\n    \"tel\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/updateUser/13",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"updateUser",
+						"13"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-updateUser",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idRol\": 3,\r\n    \"idStatus\": null,\r\n    \"name\": \"update\",\r\n    \"password\": \"123abc\",\r\n    \"tel\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/updateUser/20",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"updateUser",
+								"20"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-Q7Cg/mm/6UdrfGY5TRgYkPC+kNQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Dec 2024 18:40:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Usuario actualizado con exito"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "f8b2266f-ab98-4e9f-9305-df476067c399",
+		"name": "CRUD product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40347796"
+	},
+	"item": [
+		{
+			"name": "createProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idCategory",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "idUser",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Producto Prueba",
+							"contentType": "",
+							"type": "text"
+						},
+						{
+							"key": "trademark",
+							"value": "marca cualquiera",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "13245654",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "idStatus",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "12.50",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "postman-cloud:///1efbe991-8297-4aa0-b12b-de467e1c3110"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/newProduct",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"newProduct"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-createProduct",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idCategory",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "idUser",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Producto Prueba",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "trademark",
+									"value": "marca cualquiera",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "13245654",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "idStatus",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "12.50",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "postman-cloud:///1efbe991-8297-4aa0-b12b-de467e1c3110"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/newProduct",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"newProduct"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-BFbnHe6lLCHsHgJIiC8boQXMTYE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 06:34:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Producto creado exitosamente"
+				}
+			]
+		},
+		{
+			"name": "getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/allProducts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allProducts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getAllProducts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/allProducts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"allProducts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9088"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2380-toidWwQgUQ1CYpYts4+crFP0qxo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 06:47:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idProductos\": 1,\n        \"categoriaProductos_idCategoriaProductos\": 4,\n        \"usuarios_idUsuarios\": 1,\n        \"nombre\": \"Producto A\",\n        \"marca\": \"Marca X\",\n        \"codigo\": \"ABC123\",\n        \"stock\": 50.5,\n        \"estados_idEstados\": 1,\n        \"precio\": 199.99,\n        \"fecha_creacion\": \"2024-03-05T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                1\n            ]\n        }\n    },\n    {\n        \"idProductos\": 2,\n        \"categoriaProductos_idCategoriaProductos\": 3,\n        \"usuarios_idUsuarios\": 7,\n        \"nombre\": \"Producto B\",\n        \"marca\": \"Marca Y\",\n        \"codigo\": \"XYZ456\",\n        \"stock\": 0,\n        \"estados_idEstados\": 2,\n        \"precio\": 299.99,\n        \"fecha_creacion\": \"2023-07-15T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                2\n            ]\n        }\n    },\n    {\n        \"idProductos\": 3,\n        \"categoriaProductos_idCategoriaProductos\": 2,\n        \"usuarios_idUsuarios\": 3,\n        \"nombre\": \"Producto C\",\n        \"marca\": \"Marca Z\",\n        \"codigo\": \"LMN789\",\n        \"stock\": 30,\n        \"estados_idEstados\": 1,\n        \"precio\": 149.49,\n        \"fecha_creacion\": \"2024-01-21T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                3\n            ]\n        }\n    },\n    {\n        \"idProductos\": 4,\n        \"categoriaProductos_idCategoriaProductos\": 5,\n        \"usuarios_idUsuarios\": 9,\n        \"nombre\": \"Producto D\",\n        \"marca\": \"Marca W\",\n        \"codigo\": \"OPQ101\",\n        \"stock\": 0,\n        \"estados_idEstados\": 1,\n        \"precio\": 79.99,\n        \"fecha_creacion\": \"2023-10-04T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                4\n            ]\n        }\n    },\n    {\n        \"idProductos\": 5,\n        \"categoriaProductos_idCategoriaProductos\": 1,\n        \"usuarios_idUsuarios\": 4,\n        \"nombre\": \"Producto E\",\n        \"marca\": \"Marca V\",\n        \"codigo\": \"RST202\",\n        \"stock\": 75.2,\n        \"estados_idEstados\": 2,\n        \"precio\": 120,\n        \"fecha_creacion\": \"2023-08-17T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                5\n            ]\n        }\n    },\n    {\n        \"idProductos\": 6,\n        \"categoriaProductos_idCategoriaProductos\": 8,\n        \"usuarios_idUsuarios\": 6,\n        \"nombre\": \"Producto F\",\n        \"marca\": \"Marca U\",\n        \"codigo\": \"UVW303\",\n        \"stock\": 15.8,\n        \"estados_idEstados\": 1,\n        \"precio\": 249.5,\n        \"fecha_creacion\": \"2024-02-08T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                6\n            ]\n        }\n    },\n    {\n        \"idProductos\": 7,\n        \"categoriaProductos_idCategoriaProductos\": 10,\n        \"usuarios_idUsuarios\": 2,\n        \"nombre\": \"Producto G\",\n        \"marca\": \"Marca T\",\n        \"codigo\": \"EFG404\",\n        \"stock\": 45,\n        \"estados_idEstados\": 2,\n        \"precio\": 399.99,\n        \"fecha_creacion\": \"2024-04-14T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                7\n            ]\n        }\n    },\n    {\n        \"idProductos\": 8,\n        \"categoriaProductos_idCategoriaProductos\": 7,\n        \"usuarios_idUsuarios\": 8,\n        \"nombre\": \"Producto H\",\n        \"marca\": \"Marca S\",\n        \"codigo\": \"HIJ505\",\n        \"stock\": 0,\n        \"estados_idEstados\": 1,\n        \"precio\": 189.99,\n        \"fecha_creacion\": \"2023-11-22T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                8\n            ]\n        }\n    },\n    {\n        \"idProductos\": 9,\n        \"categoriaProductos_idCategoriaProductos\": 6,\n        \"usuarios_idUsuarios\": 10,\n        \"nombre\": \"Producto I\",\n        \"marca\": \"Marca R\",\n        \"codigo\": \"KLM606\",\n        \"stock\": 25.3,\n        \"estados_idEstados\": 2,\n        \"precio\": 99.99,\n        \"fecha_creacion\": \"2023-09-30T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                9\n            ]\n        }\n    },\n    {\n        \"idProductos\": 10,\n        \"categoriaProductos_idCategoriaProductos\": 9,\n        \"usuarios_idUsuarios\": 5,\n        \"nombre\": \"Producto J\",\n        \"marca\": \"Marca Q\",\n        \"codigo\": \"NOP707\",\n        \"stock\": 60.7,\n        \"estados_idEstados\": 1,\n        \"precio\": 159.99,\n        \"fecha_creacion\": \"2024-01-19T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                10\n            ]\n        }\n    },\n    {\n        \"idProductos\": 11,\n        \"categoriaProductos_idCategoriaProductos\": 4,\n        \"usuarios_idUsuarios\": 2,\n        \"nombre\": \"Producto K\",\n        \"marca\": \"Marca P\",\n        \"codigo\": \"LMN808\",\n        \"stock\": 0,\n        \"estados_idEstados\": 1,\n        \"precio\": 199.99,\n        \"fecha_creacion\": \"2024-03-11T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                1\n            ]\n        }\n    },\n    {\n        \"idProductos\": 12,\n        \"categoriaProductos_idCategoriaProductos\": 9,\n        \"usuarios_idUsuarios\": 1,\n        \"nombre\": \"Producto L\",\n        \"marca\": \"Marca O\",\n        \"codigo\": \"XYZ909\",\n        \"stock\": 12.5,\n        \"estados_idEstados\": 2,\n        \"precio\": 249.99,\n        \"fecha_creacion\": \"2023-06-30T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                2\n            ]\n        }\n    },\n    {\n        \"idProductos\": 13,\n        \"categoriaProductos_idCategoriaProductos\": 7,\n        \"usuarios_idUsuarios\": 5,\n        \"nombre\": \"Producto M\",\n        \"marca\": \"Marca N\",\n        \"codigo\": \"PQR010\",\n        \"stock\": 50,\n        \"estados_idEstados\": 1,\n        \"precio\": 129.99,\n        \"fecha_creacion\": \"2023-11-17T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                3\n            ]\n        }\n    },\n    {\n        \"idProductos\": 14,\n        \"categoriaProductos_idCategoriaProductos\": 6,\n        \"usuarios_idUsuarios\": 3,\n        \"nombre\": \"Producto N\",\n        \"marca\": \"Marca M\",\n        \"codigo\": \"STU111\",\n        \"stock\": 25,\n        \"estados_idEstados\": 2,\n        \"precio\": 89.99,\n        \"fecha_creacion\": \"2024-02-21T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                4\n            ]\n        }\n    },\n    {\n        \"idProductos\": 15,\n        \"categoriaProductos_idCategoriaProductos\": 10,\n        \"usuarios_idUsuarios\": 8,\n        \"nombre\": \"Producto O\",\n        \"marca\": \"Marca L\",\n        \"codigo\": \"VWX222\",\n        \"stock\": 0,\n        \"estados_idEstados\": 1,\n        \"precio\": 159.99,\n        \"fecha_creacion\": \"2024-01-08T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                5\n            ]\n        }\n    },\n    {\n        \"idProductos\": 16,\n        \"categoriaProductos_idCategoriaProductos\": 8,\n        \"usuarios_idUsuarios\": 6,\n        \"nombre\": \"Producto P\",\n        \"marca\": \"Marca K\",\n        \"codigo\": \"YZA333\",\n        \"stock\": 33,\n        \"estados_idEstados\": 2,\n        \"precio\": 179.99,\n        \"fecha_creacion\": \"2023-09-27T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                6\n            ]\n        }\n    },\n    {\n        \"idProductos\": 17,\n        \"categoriaProductos_idCategoriaProductos\": 5,\n        \"usuarios_idUsuarios\": 9,\n        \"nombre\": \"Producto Q\",\n        \"marca\": \"Marca J\",\n        \"codigo\": \"BCD444\",\n        \"stock\": 70.5,\n        \"estados_idEstados\": 1,\n        \"precio\": 99.99,\n        \"fecha_creacion\": \"2023-08-15T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                7\n            ]\n        }\n    },\n    {\n        \"idProductos\": 18,\n        \"categoriaProductos_idCategoriaProductos\": 3,\n        \"usuarios_idUsuarios\": 7,\n        \"nombre\": \"Producto R\",\n        \"marca\": \"Marca I\",\n        \"codigo\": \"EFG555\",\n        \"stock\": 0,\n        \"estados_idEstados\": 2,\n        \"precio\": 249.99,\n        \"fecha_creacion\": \"2023-12-12T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                8\n            ]\n        }\n    },\n    {\n        \"idProductos\": 19,\n        \"categoriaProductos_idCategoriaProductos\": 2,\n        \"usuarios_idUsuarios\": 4,\n        \"nombre\": \"Producto S\",\n        \"marca\": \"Marca H\",\n        \"codigo\": \"HIJ666\",\n        \"stock\": 40,\n        \"estados_idEstados\": 1,\n        \"precio\": 179.49,\n        \"fecha_creacion\": \"2024-02-02T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                9\n            ]\n        }\n    },\n    {\n        \"idProductos\": 20,\n        \"categoriaProductos_idCategoriaProductos\": 1,\n        \"usuarios_idUsuarios\": 10,\n        \"nombre\": \"Producto T\",\n        \"marca\": \"Marca G\",\n        \"codigo\": \"KLM777\",\n        \"stock\": 0,\n        \"estados_idEstados\": 1,\n        \"precio\": 219.99,\n        \"fecha_creacion\": \"2023-05-10T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                10\n            ]\n        }\n    },\n    {\n        \"idProductos\": 21,\n        \"categoriaProductos_idCategoriaProductos\": 9,\n        \"usuarios_idUsuarios\": 6,\n        \"nombre\": \"Producto U\",\n        \"marca\": \"Marca F\",\n        \"codigo\": \"NOP888\",\n        \"stock\": 85,\n        \"estados_idEstados\": 2,\n        \"precio\": 89.99,\n        \"fecha_creacion\": \"2023-07-21T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                11\n            ]\n        }\n    },\n    {\n        \"idProductos\": 22,\n        \"categoriaProductos_idCategoriaProductos\": 4,\n        \"usuarios_idUsuarios\": 3,\n        \"nombre\": \"Producto V\",\n        \"marca\": \"Marca E\",\n        \"codigo\": \"QRS999\",\n        \"stock\": 12.3,\n        \"estados_idEstados\": 1,\n        \"precio\": 299.99,\n        \"fecha_creacion\": \"2023-11-05T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                12\n            ]\n        }\n    },\n    {\n        \"idProductos\": 23,\n        \"categoriaProductos_idCategoriaProductos\": 2,\n        \"usuarios_idUsuarios\": 8,\n        \"nombre\": \"Producto W\",\n        \"marca\": \"Marca D\",\n        \"codigo\": \"TUV000\",\n        \"stock\": 55,\n        \"estados_idEstados\": 2,\n        \"precio\": 149.99,\n        \"fecha_creacion\": \"2024-01-15T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                13\n            ]\n        }\n    },\n    {\n        \"idProductos\": 24,\n        \"categoriaProductos_idCategoriaProductos\": 7,\n        \"usuarios_idUsuarios\": 5,\n        \"nombre\": \"Producto X\",\n        \"marca\": \"Marca C\",\n        \"codigo\": \"WXY111\",\n        \"stock\": 0,\n        \"estados_idEstados\": 1,\n        \"precio\": 199.99,\n        \"fecha_creacion\": \"2023-10-04T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                14\n            ]\n        }\n    },\n    {\n        \"idProductos\": 25,\n        \"categoriaProductos_idCategoriaProductos\": 6,\n        \"usuarios_idUsuarios\": 2,\n        \"nombre\": \"Producto Y\",\n        \"marca\": \"Marca B\",\n        \"codigo\": \"ZAB222\",\n        \"stock\": 65.5,\n        \"estados_idEstados\": 2,\n        \"precio\": 249.99,\n        \"fecha_creacion\": \"2023-12-23T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                15\n            ]\n        }\n    },\n    {\n        \"idProductos\": 26,\n        \"categoriaProductos_idCategoriaProductos\": 3,\n        \"usuarios_idUsuarios\": 4,\n        \"nombre\": \"Producto Z\",\n        \"marca\": \"Marca A\",\n        \"codigo\": \"CDE333\",\n        \"stock\": 0,\n        \"estados_idEstados\": 2,\n        \"precio\": 189.99,\n        \"fecha_creacion\": \"2024-02-10T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                1\n            ]\n        }\n    },\n    {\n        \"idProductos\": 27,\n        \"categoriaProductos_idCategoriaProductos\": 8,\n        \"usuarios_idUsuarios\": 9,\n        \"nombre\": \"Producto AA\",\n        \"marca\": \"Marca B\",\n        \"codigo\": \"FGH444\",\n        \"stock\": 40,\n        \"estados_idEstados\": 1,\n        \"precio\": 129.99,\n        \"fecha_creacion\": \"2023-11-28T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                2\n            ]\n        }\n    },\n    {\n        \"idProductos\": 28,\n        \"categoriaProductos_idCategoriaProductos\": 2,\n        \"usuarios_idUsuarios\": 7,\n        \"nombre\": \"Producto AB\",\n        \"marca\": \"Marca C\",\n        \"codigo\": \"IJK555\",\n        \"stock\": 60,\n        \"estados_idEstados\": 2,\n        \"precio\": 249.99,\n        \"fecha_creacion\": \"2023-10-13T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                3\n            ]\n        }\n    },\n    {\n        \"idProductos\": 29,\n        \"categoriaProductos_idCategoriaProductos\": 9,\n        \"usuarios_idUsuarios\": 1,\n        \"nombre\": \"Producto AC\",\n        \"marca\": \"Marca D\",\n        \"codigo\": \"LMN666\",\n        \"stock\": 20.5,\n        \"estados_idEstados\": 1,\n        \"precio\": 149.99,\n        \"fecha_creacion\": \"2023-12-03T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                4\n            ]\n        }\n    },\n    {\n        \"idProductos\": 30,\n        \"categoriaProductos_idCategoriaProductos\": 4,\n        \"usuarios_idUsuarios\": 6,\n        \"nombre\": \"Producto AD\",\n        \"marca\": \"Marca E\",\n        \"codigo\": \"OPQ777\",\n        \"stock\": 0,\n        \"estados_idEstados\": 2,\n        \"precio\": 199.99,\n        \"fecha_creacion\": \"2024-01-25T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                5\n            ]\n        }\n    },\n    {\n        \"idProductos\": 31,\n        \"categoriaProductos_idCategoriaProductos\": 1,\n        \"usuarios_idUsuarios\": 1,\n        \"nombre\": \"Producto prueba\",\n        \"marca\": \"marca 1\",\n        \"codigo\": \"556540\",\n        \"stock\": 10.6,\n        \"estados_idEstados\": 1,\n        \"precio\": 10.5,\n        \"fecha_creacion\": \"2024-08-12T00:00:00.000Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                54\n            ]\n        }\n    },\n    {\n        \"idProductos\": 32,\n        \"categoriaProductos_idCategoriaProductos\": 1,\n        \"usuarios_idUsuarios\": 1,\n        \"nombre\": \"Producto Prueba\",\n        \"marca\": \"marca cualquiera\",\n        \"codigo\": \"13245654\",\n        \"stock\": 12,\n        \"estados_idEstados\": 1,\n        \"precio\": 12.5,\n        \"fecha_creacion\": \"2024-12-20T00:34:09.387Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                255\n            ]\n        }\n    },\n    {\n        \"idProductos\": 33,\n        \"categoriaProductos_idCategoriaProductos\": 1,\n        \"usuarios_idUsuarios\": 1,\n        \"nombre\": \"Producto Prueba\",\n        \"marca\": \"marca cualquiera\",\n        \"codigo\": \"13245654\",\n        \"stock\": 12,\n        \"estados_idEstados\": 1,\n        \"precio\": 12.5,\n        \"fecha_creacion\": \"2024-12-20T00:42:25.517Z\",\n        \"foto\": {\n            \"type\": \"Buffer\",\n            \"data\": [\n                255\n            ]\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOndeProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getOndeProduct",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/product/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"128-JaVWq+AIRfcnB2QZOFRtuk4R1Ms\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 07:17:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idProductos\": 1,\n    \"categoriaProductos_idCategoriaProductos\": 2,\n    \"usuarios_idUsuarios\": 1,\n    \"nombre\": \"producto actualizado\",\n    \"marca\": \"marca actualizada\",\n    \"codigo\": \"1321465454\",\n    \"stock\": 50,\n    \"estados_idEstados\": 1,\n    \"precio\": 20.5,\n    \"fecha_creacion\": \"2024-03-05T00:00:00.000Z\",\n    \"foto\": {\n        \"type\": \"Buffer\",\n        \"data\": [\n            137\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idCategory",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "idUser",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "producto actualizado",
+							"type": "text"
+						},
+						{
+							"key": "trademark",
+							"value": "marca actualizada",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "1321465454",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "idStatus",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "20.50",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "postman-cloud:///1efbea0a-ef91-4920-8d3e-35032ddd772a"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/updateProduct/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"updateProduct",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-updateProduct",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idCategory",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "idUser",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "producto actualizado",
+									"type": "text"
+								},
+								{
+									"key": "trademark",
+									"value": "marca actualizada",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "1321465454",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "idStatus",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20.50",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "postman-cloud:///1efbea0a-ef91-4920-8d3e-35032ddd772a"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/updateProduct/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"updateProduct",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-/BD0U/lR1gr+ShqrBOim5xlE54c\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 07:05:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Producto actualizado exitosamente"
+				}
+			]
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idStatus\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/deleteProduct/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"deleteProduct",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-deleteProduct",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idStatus\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/deleteProduct/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"deleteProduct",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-dEn5C6hu/dGJ2vOPk1Uy0Ty8ty0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 07:18:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Producto eliminado exitosamente"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "dc013473-aaf2-4ce4-9501-8345c51e02be",
+		"name": "CRUD status",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40347796"
+	},
+	"item": [
+		{
+			"name": "createStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Completado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/newStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"newStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-createStatus",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Completado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/newStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"newStatus"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-qZHIDkHyCjZhxXpRoZjvy66u/A4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 05:09:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Usuario creado exitosamente"
+				}
+			]
+		},
+		{
+			"name": "getAllStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/allStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getAllStatus",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/allStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"allStatus"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "258"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"102-Nka8DkaNQR8ZXh/wcVyCB7J/D40\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 05:14:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idEstados\": 1,\n        \"nombre\": \"Activo\"\n    },\n    {\n        \"idEstados\": 2,\n        \"nombre\": \"Inactivo\"\n    },\n    {\n        \"idEstados\": 3,\n        \"nombre\": \"Pendiente\"\n    },\n    {\n        \"idEstados\": 4,\n        \"nombre\": \"Rechazado\"\n    },\n    {\n        \"idEstados\": 5,\n        \"nombre\": \"Aprobado\"\n    },\n    {\n        \"idEstados\": 6,\n        \"nombre\": \"En proceso\"\n    },\n    {\n        \"idEstados\": 10,\n        \"nombre\": \"Completado\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOneStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/status/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"status",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-getOneStatus",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/status/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"status",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-9u9YVvbpK5JUStmWH8zwfbWiHNs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 05:13:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idEstados\": 3,\n    \"nombre\": \"Pendiente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateStatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"7\",\r\n    \"name\": \"En proceso\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/updateStatus/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"updateStatus",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-updateStatus",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"7\",\r\n    \"name\": \"En proceso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/updateStatus/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"updateStatus",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-46GfEYBicVmGUqoJbJUkaHO7S4c\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 05:17:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Estado actualizado con exito\""
+				}
+			]
+		},
+		{
+			"name": "deleteStatus",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/deleteStatus/11",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"deleteStatus",
+						"11"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "result-deleteStatus",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/deleteStatus/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"deleteStatus",
+								"11"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-GcnOpWo+IVYVPifkw8wuVa8TKpA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Dec 2024 05:24:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
