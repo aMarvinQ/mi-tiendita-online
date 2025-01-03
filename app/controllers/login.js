@@ -37,6 +37,25 @@ class Login {
             res.status(500).send(`Error al registrar usuario: ${err.message}`)
         }
     }
+
+    // login del usuario
+    login = async (req, res) => {
+        const { email, password } = req.body;
+
+        try {
+
+            const user = await userModel.findOne({where: {correo_electronico: email}});
+            if (!user) return res.status(401).json({ message: 'Usuario no encontrado'});
+            
+            const isMatch = await bcrypt.compare(password, user.password);
+            if(!isMatch) return res.status(401).json({ message: 'Contraseña incorrecta'});
+
+            const token = jwt.sign({ idUsuarios: user.idUsuarios }, process.env.JWT_SECRET, { expiresIn: '24h'});
+            res.status(200).json({ token });
+        } catch ( err ){
+            res.status(500).send(`Error al procesar la solicitud: ${err.message}`);
+        }
+    }
 }
 
 const login = new Login
