@@ -38,17 +38,32 @@ export const CreateProductForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const payload = {
-        ...data
-      };
-      await axios.post("/newProduct", payload);
-      alert("Product creado exitosamente");
+      // Crear un FormData
+      const formData = new FormData();
+  
+      // Añadir todos los campos al FormData
+      for (const [key, value] of Object.entries(data)) {
+        formData.append(key, value);
+      }
+  
+      // Asegurarse de que la imagen se agregue al FormData
+      if (data.foto && data.foto[0]) {
+        formData.append("foto", data.foto[0]);
+      }
+      // Hacer la solicitud POST al backend
+      const response = await axios.post("/newProduct", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data", 
+        },
+      });
+  
+      alert("Producto creado exitosamente");
     } catch (error) {
       console.error("Error al crear producto:", error);
       alert("Ocurrió un error al crear el producto");
     }
   };
-
+  
   return (
     <Box
       component="form"

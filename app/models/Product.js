@@ -62,7 +62,7 @@ const productModel = sequelize.define('Productos', {
         allowNull: false
     },
     foto: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500),
         allowNull: true
     }
 }, {

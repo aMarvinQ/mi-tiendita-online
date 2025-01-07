@@ -6,6 +6,7 @@ class ProductController {
   createProduct = async (req, res) => {
     try {
       const foto = req.file ? `/images/${req.file.filename}` : null;
+      console.log(foto);
       const {
         idCategory,
         idUser,
