@@ -62,8 +62,8 @@ const productModel = sequelize.define('Productos', {
         allowNull: false
     },
     foto: {
-        type: DataTypes.BLOB,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     tableName: 'Productos',

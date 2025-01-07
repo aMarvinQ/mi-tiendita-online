@@ -1,6 +1,7 @@
 import express from "express";
 import sequelize from './config/database.js'
 import cors from 'cors'
+import path from 'path'
 
 // importación de rutas
 import statusRouter from "./routes/Status.js";
@@ -10,6 +11,8 @@ import catProductRouter from './routes/catProduct.js';
 import productRoutes from './routes/Product.js';
 import orderDetailsRoutes from './routes/OrderDetails.js';
 import loginRoutes from "./routes/login.js";
+import authenticateToken from "./middlewares/authMiddleware.js";
+import checkUserState from "./middlewares/userStateMiddleware.js";
 
 const app = express();
 const port = 3000;
@@ -22,14 +25,19 @@ app.get("/", (req, res) => {
   res.send("Hola Mundo");
 });
 
-// Rutas
+// Rutas públicas
 app.use('/api', loginRoutes);
+
+// rutas protegidas
+// app.use('/api', authenticateToken, checkUserState);
+
 app.use('/api', statusRouter);
 app.use('/api', customerRouter);
 app.use('/api', userRouter);
 app.use('/api', catProductRouter);
 app.use('/api', productRoutes);
 app.use('/api', orderDetailsRoutes);
+
 
 
 app.get('/test', async (req, res) => {

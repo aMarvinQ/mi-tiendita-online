@@ -6,18 +6,8 @@ class UserController {
     createUser = async (req, res) => {
         try {
             // parametros requeridos del procedimiento almacenado
-            const { idRol, idStatus, email, name, password, tel, birthdate, idCustomer } = req.body;
-            if( !idRol 
-                || !idStatus 
-                || !email 
-                || !name 
-                || !password 
-                || !tel 
-                || !birthdate 
-                || !idCustomer ) 
-                {
-                return res.send('Debe completar todos los cambos');
-            }
+            const { idRol, idStatus, email, name, password, tel, birthdate, idCustomer = null} = req.body;
+            
             await sequelize.query(`EXEC p_insert_usuarios 
                 @rol_idRol=:idRol, 
                 @estados_idEstados=:idStatus, 

@@ -45,7 +45,11 @@ class OrderDetailsController {
     //   ver todas las ordenes 
     getAllOrders = async (req, res) => {
         try {
-            const orders = await sequelize.query(`EXEC getAllOrders;`);
+          // const page = parseInt(req.query.page, 10) || 1;
+          // const limit = parseInt(req.query.limit, 24) || 10;
+          // const offset = (page - 1) * limit;
+
+            const [orders] = await sequelize.query(`EXEC getAllOrders;`);
 
             res.status(201).json(orders);
         } catch ( err ){

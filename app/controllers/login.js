@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import JWT from 'jwt-simple'
 import { QueryTypes } from '@sequelize/core';
 import sequelize from '../config/database.js';
 import userModel from '../models/User.js';
@@ -8,6 +9,7 @@ import transporter from '../config/nodemailer.js';
 
 dotenv.config();
 
+// variables de entorno para servidor smtp
 const SECRET_KEY = process.env.SECRET_KEY;
 const EMAIL_USER = process.env.EMAIL_USER;
 
@@ -46,8 +48,11 @@ class Login {
             const mailOptions = {
                 from: EMAIL_USER,
                 to: email,
-                subject: 'Bienvenido a Mi Tiendita Online',
-                text: `Hola ${name},\n\nPor favor verifica tu cuenta haciendo clic en el siguiente enlace: ${verificationLink}\n\nSaludos,\nEquipo de Soporte`
+                subject: '<h1>Bienvenido a Mi Tiendita Online</h1>',
+                html: `<div><p>Hola <strong>${name}</strong>,Por favor verifica tu cuenta haciendo clic en el siguiente boton: </p> <button>${verificationLink}<button></div>`,
+                Headers: {
+                    'Content-Type': 'text/html'
+                }
             };
 
             transporter.sendMail(mailOptions, (err, info) => {
@@ -94,15 +99,21 @@ class Login {
         try {
 
             const user = await userModel.findOne({where: {correo_electronico: email}});
-            if (!user) return res.status(401).json({ message: 'Usuario no encontrado'});
+
+            if (user.estados_idEstados !== 1) {
+                return res.status(403).json({ message: 'La cuenta no está activa. Verifica tu correo para activarla.' });
+            }
             
             const isMatch = await bcrypt.compare(password, user.password);
-            if(!isMatch) return res.status(401).json({ message: 'Contraseña incorrecta'});
 
-            const token = jwt.sign({ idUsuarios: user.idUsuarios }, SECRET_KEY, { expiresIn: '24h'});
+            if(!isMatch) {
+                return res.status(401).json({ message: 'Contraseña incorrecta'});
+            }
+
+            const token = JWT.encode({ idUsuarios: user.estados_idUsuarios }, SECRET_KEY, 'HS256', { expiresIn: '24h'});
             res.status(200).json({ token });
         } catch ( err ){
-            res.status(500).send(`Error al procesar la solicitud: ${err.message}`);
+            res.status(500).send(`Error al procesar la solicitud: ${err.message}`); 
         }
     }
 }
