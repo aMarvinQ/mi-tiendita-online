@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.greeting-box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #cbc9c8;
+        padding: 16px;
+}
+
+.greeting {
+    color: #ffa436;
+}

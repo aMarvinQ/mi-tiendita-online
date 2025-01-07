@@ -1,0 +1,36 @@
+.order-card {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+  }
+  
+  .order-title {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .order-detail {
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  .details-button {
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .deliver-button {
+    background-color: #ff7f2a;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .deliver-button:hover {
+    background-color: #e66e1f;
+  }
+  
